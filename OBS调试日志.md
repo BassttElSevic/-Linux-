@@ -2,7 +2,7 @@
 
 > **场景**：OBS Studio 在 **niri（Wayland 平铺式窗口管理器）** 会话下，来源面板完全没有"屏幕捕获 (PipeWire)"选项，无法录制屏幕。
 > **结论先行**：niri 的屏幕共享需要 **`xdg-desktop-portal-gnome`**（不是 kde，也不是 wlr 版本）。装错 portal 包是这类问题最常见的坑。
-> **状态**：✅ 已修复，可正常录制。
+> **状态**： 已修复，可正常录制。
 
 ---
 
@@ -46,7 +46,7 @@ sudo apt install xdg-desktop-portal xdg-desktop-portal-kde
 1. **KDE portal 后端只在 Plasma 会话下才会被激活**。当前会话是 niri，`xdg-desktop-portal-kde.service` 根本不会启动；
 2. KDE portal 即使激活，也**不提供** `ScreenCast`（屏幕共享）接口 —— 屏幕共享是 GNOME portal 的活。
 
-> 💡 **教训**：搜"Linux OBS 屏幕捕获"教程时，教程默认针对 GNOME/KDE，而 niri 这类小众 wlroots 合成器（sway、river、hyprland 同理）需要单独确认官方要求。
+> **教训**：搜"Linux OBS 屏幕捕获"教程时，教程默认针对 GNOME/KDE，而 niri 这类小众 wlroots 合成器（sway、river、hyprland 同理）需要单独确认官方要求。
 
 ---
 
@@ -92,7 +92,7 @@ systemctl --user list-units --all | grep -i portal
 #             ← 没有 xdg-desktop-portal-gnome.service！
 ```
 
-> 🔑 **核心判断**：GTK portal（`xdg-desktop-portal-gtk`）只提供文件选择等基础功能，**不提供屏幕共享**。所以当时系统里没有任何可用的 ScreenCast 实现 → OBS 报 `No capture sources available`。
+>  **核心判断**：GTK portal（`xdg-desktop-portal-gtk`）只提供文件选择等基础功能，**不提供屏幕共享**。所以当时系统里没有任何可用的 ScreenCast 实现 → OBS 报 `No capture sources available`。
 
 ### 4.5 查 OBS 日志（Flatpak 版日志路径）
 
@@ -102,7 +102,7 @@ grep -iE "portal|pipewire|screencast" <最新日志文件>
 # 决定性报错: [pipewire] No capture sources available
 ```
 
-> 📂 Flatpak 版 OBS 的配置/日志都在 `~/.var/app/com.obsproject.Studio/` 下，和 apt 版（`~/.config/obs-studio/`）位置不同，排查时别找错。
+>  Flatpak 版 OBS 的配置/日志都在 `~/.var/app/com.obsproject.Studio/` 下，和 apt 版（`~/.config/obs-studio/`）位置不同，排查时别找错。
 
 ### 4.6 验证修复后：ScreenCast 接口已暴露到 D-Bus
 
