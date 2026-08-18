@@ -1,2 +1,3 @@
-# -Linux-
+# Basstt ElSevic的一些调试日志
+
 个人使用Linux遇到一些问题时的调试日志，分享开来，给大家看
