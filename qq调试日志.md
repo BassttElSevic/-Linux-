@@ -381,3 +381,6 @@ sed -i 's/\["3.2.32-52194"\]/["3.2.32-52194","3.2.32-52195"]/' ~/.var/app/com.qq
 4. **对照组实验**：移走 versions 目录证明基础构建正常、热更新构建异常，形成因果闭环。
 5. **失败方案同样有价值**：chmod 555 的失败排除了"只读锁定"路线，并揭示了 launcher 依赖 config.json 可写这一约束。
 6. **现象分层**：把 GLib 错误、vsync 错误、快捷键错误逐条判定为无害噪声，避免被干扰项带偏，最终收敛到真正的主因（热更新切换到坏构建 + renderer 不启动）。
+
+<img width="500" height="500" alt="bigbasstt-removebg-preview" src="https://github.com/user-attachments/assets/3127199f-cf0b-4ad9-850d-8c81fd6d3368" />
+
