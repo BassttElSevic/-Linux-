@@ -4,6 +4,8 @@
 > **结论先行**：pi 在 Wayland 下读剪贴板图片，是**直接调用系统里的 `wl-paste` 二进制**。这台机器上 `wl-paste`（属于 `wl-clipboard` 包）**根本没安装**，只有 X11 的 `xclip`，而 xclip 在 Wayland 下读不到图。这是根因。
 > **状态**：已修复，可正常粘贴。**装 `wl-clipboard` 一个包就够了。**
 
+写于**2026年8月23日-星期日-北京时间22：11：44**
+
 ---
 
 ## 1. 环境信息（复现此问题的系统配置）
@@ -332,4 +334,7 @@ pi 按 Ctrl+V 粘不进图片
 ---
 
 *记录时间：2026-08-19 · 环境：Kali Rolling / niri / Kitty / Noctalia5 / Wayland*
-*结论一句话：**pi 在 Wayland 下要能粘贴图片，只需 `sudo apt install wl-clipboard`；别叠 cliphist、别开 `wl-paste --watch`，否则才会与 Noctalia 冲突。***
+*结论：**pi 在 Wayland 下要能粘贴图片，只需 `sudo apt install wl-clipboard`；别叠 cliphist、别开 `wl-paste --watch`，否则才会与 Noctalia 冲突。***
+
+<img width="500" height="500" alt="lilbasstt" src="https://github.com/user-attachments/assets/cfc31e08-f0e0-4784-a59e-677e6b1c011d" />
+
