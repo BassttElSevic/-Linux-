@@ -228,3 +228,6 @@ OBS 没有"屏幕捕获"选项
 
 *记录时间：2026-08-19 · 环境：Kali Rolling / niri 26.04 / OBS 32.2.2 (Flatpak) / PipeWire 1.6.8*
 *结论一句话：**niri 用户请装 `xdg-desktop-portal-gnome`，装 kde 版本没用。***
+
+<img width="500" height="500" alt="bigbasstt-removebg-preview" src="https://github.com/user-attachments/assets/4d11970a-2c7c-4c6b-9322-d97c59bb84f4" />
+
