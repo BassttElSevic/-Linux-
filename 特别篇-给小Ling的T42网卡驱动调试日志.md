@@ -313,4 +313,5 @@ MAC 随机化（`wifi.scan-rand-mac-address=yes`）会让网卡 MAC 反复变，
 *记录时间：2026-08-29 · 环境：ThinkPad T42 / Debian 12 bookworm / 内核 6.1.0-52-686 / aircrack-ng rtl8188eus*
 *结论一句话：**老笔记本连不上 WiFi 报"密码错误"，先查是不是内置老卡在抢连接——多数时候密码根本没输错，是 NM 把连接给了那张只会 WEP 的卡。***
 
-<img width="500" height="500" alt="bigbasstt-removebg-preview" src="https://github.com/user-attachments/assets/4d11970a-2c7c-4c6b-9322-d97c59bb84f4" />
+<img width="1260" height="1260" alt="图片" src="https://github.com/user-attachments/assets/4f318024-d914-4bbf-bc32-e104ef7d6697" />
+（可爱的小Ling
